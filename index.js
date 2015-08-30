@@ -23,7 +23,7 @@ module.exports = function(opts){
 
   var fshare = express.Router()
 
-  fshare.get('/', serveStatic(opts.dest))
+  fshare.use('/', serveStatic(opts.dest))
 
   fshare.post('/', upload.single('file'), function(req,res){
       res.set('Connection', 'close');
