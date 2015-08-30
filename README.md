@@ -20,11 +20,10 @@ To retrieve a file from server GET to fshare_mountpoint/id where id is your file
 
 ## Options
 One can pass options object to the fshare(options) middleware function.
+
 Current options are:
 - "dest": specifies a destination folder for uploads, by default files go into /tmp/fshare or similar tmp dir for your OS.
-- "limits": this are passed straight to multer "limits" options atribute. Read more about it on [multer][].
-
-[multer](https://github.com/expressjs/multer)
+- "limits": this are passed straight to multer "limits" options atribute. Read more about it on [multer](https://github.com/expressjs/multer).
 
 **NOTE**: you may have to tweak limits fileSize to prevent a spam attacks of uploading huge files to the server.
 
