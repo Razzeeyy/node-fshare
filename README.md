@@ -3,10 +3,13 @@ Simple filesharing express-style middleware.
 
 ## Installation
 Install it with
+````
     npm install TODO:installAppNameHere
-
+````
 Mount it!
+````js
     app.use('/', fshare())
+````
 
 ##Usage
 ### Uploading
@@ -24,3 +27,17 @@ Current options are:
 [multer](https://github.com/expressjs/multer)
 
 **NOTE**: you may have to tweak limits fileSize to prevent a spam attacks of uploading huge files to the server.
+
+## Example
+````js
+var express=require("express")
+var fshare = require('fshare')
+
+var app = express()
+
+app.use('/fshare', fshare({dest: __dirname+'/uploads'}))
+
+app.listen(1337,function(){
+    console.log("Listening on 1337");
+});
+````
