@@ -4,7 +4,7 @@ Simple filesharing express-style middleware.
 ## Installation
 Install it with
 ````
-    npm install fshare
+    npm install --save fshare
 ````
 Mount it!
 ````js
