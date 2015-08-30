@@ -16,7 +16,7 @@ module.exports = function(opts){
     destination: opts.dest,
     filename: function (req, file, cb) {
       //TODO: will it clash on muptiple requests at once?
-      cb(null, Date.now()+path.extname(file.originalname))
+      cb(null, Date.now().toString(16)+path.extname(file.originalname))
     }
   })
   var upload = multer({ storage: storage, limits: opts.limits })
