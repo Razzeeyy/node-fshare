@@ -1,0 +1,13 @@
+{
+  "name": "fshare",
+  "version": "1.0.0",
+  "description": "Simple filesharing express-style middleware",
+  "main": "index.js",
+  "author": "Alexey Shmakov <razzeeyy@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "multer": "^1.0.3",
+    "serve-static": "^1.10.0"
+  }
+}
