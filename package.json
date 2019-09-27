@@ -9,5 +9,13 @@
     "express": "^4.13.3",
     "multer": "^1.0.3",
     "serve-static": "^1.10.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Razzeeyy/node-fshare.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Razzeeyy/node-fshare/issues"
+  },
+  "homepage": "https://github.com/Razzeeyy/node-fshare#readme"
 }
