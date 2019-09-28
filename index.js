@@ -5,15 +5,15 @@ var serveStatic = require('serve-static')
 var multer  = require('multer')
 
 DEFAULT_OPTS = {
-  dest: path.join(os.tmpdir(), 'fshare'),
+  destination: path.join(os.tmpdir(), 'fshare'),
   limits: null
 }
 
 module.exports = function(opts){
-  opts = opts || DEFAULT_OPTS
+  opts = Object.assign({}, DEFAULT_OPTS, opts) 
 
   var storage = multer.diskStorage({
-    destination: opts.dest,
+    destination: opts.destination,
     filename: function (req, file, cb) {
       //TODO: will it clash on muptiple requests at once?
       cb(null, Date.now().toString(16)+path.extname(file.originalname))
@@ -23,7 +23,7 @@ module.exports = function(opts){
 
   var fshare = express.Router()
 
-  fshare.use('/', serveStatic(opts.dest))
+  fshare.use('/', serveStatic(opts.destination))
 
   fshare.post('/', upload.single('file'), function(req,res){
       res.set('Connection', 'close');
