@@ -3,6 +3,7 @@ const path = require('path')
 const express = require("express")
 const serveStatic = require('serve-static')
 const multer  = require('multer')
+const uuid = require('uuid/v4')
 
 const DEFAULT_OPTS = {
   destination: path.join(os.tmpdir(), 'fshare'),
@@ -14,8 +15,9 @@ module.exports = function(opts) {
 
   const storage = multer.diskStorage({
     destination: opts.destination,
-    //TODO: will it clash on muptiple requests at once?
-    filename: (req, file, cb) => cb(null, Date.now().toString(16)+path.extname(file.originalname))
+    filename: (req, file, cb) => {
+      cb(null, uuid()+path.extname(file.originalname))
+    }
   })
   const upload = multer({ storage: storage, limits: opts.limits })
 
