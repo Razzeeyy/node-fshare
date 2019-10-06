@@ -12,7 +12,7 @@ This is a version 2. It has some major breaking changes:
 * renamed `dest` options parameter to `destination`
 * updated dependency libraries to newer versions
 
-For info on version 1 see [v1 branch](Razzeeyy/node-fshare/tree/v1).
+For info on version 1 see [v1 branch](https://github.com/Razzeeyy/node-fshare/tree/v1).
 
 
 ## Installation

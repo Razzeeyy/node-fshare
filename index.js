@@ -16,7 +16,7 @@ module.exports = function(opts) {
   const storage = multer.diskStorage({
     destination: opts.destination,
     filename: (req, file, cb) => {
-      cb(null, uuid()+path.extname(file.originalname))
+      cb(null, uuid() + path.extname(file.originalname))
     }
   })
   const upload = multer({ storage: storage, limits: opts.limits })
